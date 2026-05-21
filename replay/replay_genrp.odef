@@ -8,11 +8,11 @@
 #include "replay_hodo.odef"
 #include "replay_bb.odef"
 #include "replay_sbs_genrp.odef"
-# #include "replay_SBSGEM.odef"
+##include "replay_SBSGEM.odef"
 #include "replay_SBSGEM_genrp.odef"
 # AJRP: for GEN-RP pass "0", we aren't writing the PR hodo or active ana outputs
-# #include "replay_activeAna.odef"
-# #include "replay_hodoPR.odef"
+#include "replay_activeAna.odef"
+#include "replay_hodoPR.odef"
 # #include "replay_SBSGEM_light.odef"
 #include "replay_helicity.odef"
 

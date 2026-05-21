@@ -82,6 +82,7 @@ block sbs.gemCeR.*.clust.nclustv_tot
 # tree variables: Side gems
 block sbs.gemPR.track.*
 block sbs.gemPR.hit.*
+block sbs.gemPR.*.strip.*
 variable sbs.gemPR.nlayershit
 variable sbs.gemPR.nlayershitu
 variable sbs.gemPR.nlayershitv
@@ -92,11 +93,11 @@ variable sbs.gemPR.nclustu_layer
 variable sbs.gemPR.nclustv_layer
 variable sbs.gemPR.n2Dhit_layer
 # block sbs.gemPR.*.time.T0_by_APV
-# block sbs.gemPR.*.time.Tref_coarse
-# block sbs.gemPR.*.time.Tcoarse_by_APV
-# block sbs.gemPR.*.time.Tfine_by_APV
-# block sbs.gemPR.*.time.EventCount_by_APV
-# block sbs.gemPR.*.time.T_ns_by_APV
+ #block sbs.gemPR.*.time.Tref_coarse
+ #block sbs.gemPR.*.time.Tcoarse_by_APV
+ #block sbs.gemPR.*.time.Tfine_by_APV
+ #block sbs.gemPR.*.time.EventCount_by_APV
+ #block sbs.gemPR.*.time.T_ns_by_APV
 block sbs.gemPR.*.strip.nstripsfired
 block sbs.gemPR.*.strip.nstrips_keep
 block sbs.gemPR.*.strip.nstrips_keep_lmax
@@ -108,7 +109,29 @@ block sbs.gemPR.*.clust.nclustu
 block sbs.gemPR.*.clust.nclustv
 block sbs.gemPR.*.clust.nclustu_tot
 block sbs.gemPR.*.clust.nclustv_tot
+block sbs.gemPR.*.clust.clustu_time
+block sbs.gemPR.*.clust.clustv_time
+block sbs.gemPR.*.clust.clustu_pos
+block sbs.gemPR.*.clust.clustv_pos
+block sbs.gemPR.*.clust.clustu_adc
+block sbs.gemPR.*.clust.clustv_adc
+block sbs.gemPR.*.clust.clustu_strips
+block sbs.gemPR.*.clust.clustv_strips
+block sbs.gemPR.*.hit.hitx
+block sbs.gemPR.*.hit.hity
+block sbs.gemPR.*.hit.hitxg
+block sbs.gemPR.*.hit.hityg
+block sbs.gemPR.*.hit.hitTAvg
+block sbs.gemPR.*.hit.hitTdiff
+block sbs.gemPR.*.hit.hitADCavg
 
+
+
+
+
+
+
+#block sbs.gemPR.*
 
 #th2d hsbs_gemCeF_NstripsU_layer ';layer;Number U/X strips fired' [I] sbs.gemCeF.nstripsu_layer[I] 4 -0.5 3.5 2000 -0 4000
 #th2d hsbs_gemCeF_NstripsV_layer ';layer;Number V/X

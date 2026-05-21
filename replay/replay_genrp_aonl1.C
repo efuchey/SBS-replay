@@ -14,7 +14,7 @@
 #include "TList.h"
 #include "TObject.h"
 #include "TClonesArray.h"
-
+#include "THaRun.h"
 #include "THaEvData.h"
 #include "MultiFileRun.h"
 #include "THaAnalyzer.h"
@@ -35,6 +35,7 @@
 #include "SBSTimingHodoscope.h"
 #include "SBSGEMSpectrometerTracker.h"
 #include "SBSGEMPolarimeterTracker.h"
+#include "SBSGEMPRTracker.h"
 #include "SBSGEMTrackerBase.h"
 #include "SBSRasteredBeam.h"
 #include "LHRSScalerEvtHandler.h"
@@ -50,7 +51,7 @@ void replay_genrp_aonl1(UInt_t runnum=10491, Long_t nevents=-1, Long_t firsteven
 
   THaAnalyzer* analyzer = new THaAnalyzer;
 
-  SBSBigBite* bigbite = new SBSBigBite("bb", "BigBite spectrometer" );
+  SBSBigBite* bigbite = new SBSBigBite("bb", "BigBite spectrometer");
   //bigbite->AddDetector( new SBSBBShower("ps", "BigBite preshower") );
   //bigbite->AddDetector( new SBSBBShower("sh", "BigBite shower") );
   SBSBBTotalShower* ts= new SBSBBTotalShower("ts", "sh", "ps", "BigBite shower");
@@ -190,12 +191,28 @@ void replay_genrp_aonl1(UInt_t runnum=10491, Long_t nevents=-1, Long_t firsteven
   
 
 
-  //SBSGEMSpectrometerTracker *gemPR = new SBSGEMSpectrometerTracker("gemPR", "Super BigBite Hall A side GEM data for genrp");
-  //gemPR->SetPedestalMode( pm );
-  //gemPR->SetMakeCommonModePlots( cmplots );
-  //if (usesbsgems != 0 ) harm->AddDetector(gemPR);
+  SBSGEMPRTracker *gemPR = new SBSGEMPRTracker("gemPR", "Super BigBite Hall A side GEM data for genrp");
+  gemPR->SetPedestalMode( pm );
+  gemPR->SetMakeCommonModePlots( cmplots );
+  if (usesbsgems != 0 ){
+	  harm->AddDetector(gemPR);
+  }
 
-  gHaApps->Add(harm);
+  
+  /*
+/////////////////////////////////////////////Saru added these line for some test 
+SBSGEMSpectrometerTracker *gemPR =new SBSGEMSpectrometerTracker("gemPR","Super BigBite Hall A side GEM data for genrp");
+gemPR->SetPedestalMode( pm );
+gemPR->SetMakeCommonModePlots( cmplots );
+if( usesbsgems < 0 ) {
+  gemPR->SetNonTrackingMode( 1 );
+}
+if( usesbsgems != 0 ) {
+  harm->AddDetector( gemPR );
+}
+////////////////////////////////////////////////////////////
+*/
+ gHaApps->Add(harm);
   //bigbite->SetDebug(2);
   //harm->SetDebug(2);
 
